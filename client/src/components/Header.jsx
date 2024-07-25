@@ -44,11 +44,7 @@ export default function Header() {
                         About
                     </Link>
                 </Navbar.Link>
-                <Navbar.Link active={path==="/sign-in"} as={"div"}>
-                    <Link to="/sign-in" >
-                        Sign In
-                    </Link>
-                </Navbar.Link>
+               
                 <Navbar.Link active={path==="/projects"} as={"div"}>
                     <Link to="/projects" >
                         Projects
