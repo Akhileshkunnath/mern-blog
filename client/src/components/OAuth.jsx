@@ -12,13 +12,15 @@ const OAuth = () => {
      const dispatch = useDispatch();
         const navigate = useNavigate();
     const handleGoogleClick = async()=>{
+         
        
-        const auth = getAuth(app)
+        const auth = getAuth(app);
         const provider = new GoogleAuthProvider();
         provider.setCustomParameters({
             prompt:"select_account"
         })
         try {
+            
     
             const resultsFromGoogle = await signInWithPopup(auth, provider);
             const res = await fetch("/api/auth/google", {
