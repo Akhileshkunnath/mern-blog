@@ -6,7 +6,7 @@ import {getDownloadURL, getStorage, ref, uploadBytesResumable} from "firebase/st
 import { app } from "../firebase"
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-import { updateStart, updateSuccess,updateFailure,deleteUserFailure,deleteUserStart,deleteUserSuccess } from "../Redux/user/userSlice"
+import { updateStart, updateSuccess,updateFailure,deleteUserFailure,deleteUserStart,deleteUserSuccess,signoutSuccess } from "../Redux/user/userSlice"
 import { useDispatch } from "react-redux"
 import {HiOutlineExclamationCircle} from "react-icons/hi"
 
@@ -158,6 +158,25 @@ const DashProfile = () => {
     }
 
    }
+
+   const handleSignout = async()=>{
+    try {
+        const res = await fetch("/api/user/signout", {
+            method:"POST",
+
+        });
+        const data = await res.json();
+        if(!res.ok) {
+            console.log(data.message)
+        } else {
+            dispatch(signoutSuccess())
+
+        }
+        
+    } catch (error) {
+        
+    }
+   }
    
 
   return (
@@ -167,7 +186,8 @@ const DashProfile = () => {
        <form onSubmit={handleSubmit}  className="flex flex-col gap-4">
         <input type="file" accept="image/*" onChange={handleImageChange} ref={filePickerRef} hidden/>
        <div className="relative w-32 h-32 self-center cursor-pointer  shadow-md overflow-hidden rounded-full " onClick={()=>{filePickerRef.current.click()}}>
-      { imageFileUploadProgress && (<CircularProgressbar value={imageFileUploadProgress || 0} text={`${imageFileUploadProgress}%`} strokeWidth={5} styles={{
+      { imageFileUploadProgress && (<CircularProgressbar value={imageFileUploadProgress || 0} text={`${imageFileUploadProgress}%`} strokeWidth={5} 
+      styles={{
         root: {
             width:"100%",
             height:"100%",
@@ -193,7 +213,7 @@ const DashProfile = () => {
        </form>
        <div className="text-red-500 flex justify-between mt-5">
         <span onClick={()=>{setShowModal(true)}}>Delete Account</span>
-        <span>Sign-out</span>
+        <span onClick={handleSignout}>Sign-out</span>
        </div>
 
        { updateUserSuccess && (
