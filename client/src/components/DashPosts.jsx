@@ -114,7 +114,7 @@ export const DashPosts = () => {
                   </Link>
                 </Table.Cell>
                 <Table.Cell >
-                  <Link to={post.slug} className='font-medium text-gray-500 dark:text-white'>{post.title}</Link>
+                  <Link to={`/post/${post.slug}`} className='font-medium text-gray-500 dark:text-white'>{post.title}</Link>
 
                 </Table.Cell>
                 <Table.Cell>
