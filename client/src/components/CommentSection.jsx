@@ -95,6 +95,15 @@ const handleLike = async(commentId)=>{
 
 
 }
+
+
+const handleEdit = async(comment, editedContent)=>{
+    setComments (
+        comments.map((c)=>
+    c._id === comment._id ? {...c, content : editedContent} : c)
+    )
+
+}
   return (
     <div className='max-w-2xl  p-3 mx-auto w-full'>
         {
@@ -142,7 +151,7 @@ const handleLike = async(commentId)=>{
                         {
                             comments.map(comment=>(
 
-                            <Comment key={comment._id} comment ={comment} onLike = {handleLike}/>
+                            <Comment key={comment._id} comment ={comment} onLike = {handleLike} onEdit = {handleEdit}/>
 
                             ))
                         }
