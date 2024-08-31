@@ -1,8 +1,13 @@
 import React from 'react'
+import CallToAction from '../components/CallToAction'
 
 const Projects = () => {
   return (
-    <div>Projects</div>
+    <div className='min-h-screen max-w-2xl mx-auto flex justify-center items-center gap-6 flex-col p-3'>
+      <h1 className='text-3xl font-semibold'>Projects</h1>
+      <p className='text-md text-gray-500'>"Build compelling and entertaining projects while mastering HTML, CSS, and JavaScript!"</p>
+     <CallToAction/>
+    </div>
   )
 }
 
