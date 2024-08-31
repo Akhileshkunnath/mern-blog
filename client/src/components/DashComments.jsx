@@ -45,7 +45,7 @@ export const DashComments = () => {
      const startIndex = comments.length;
       try {
         const res = await fetch(`/api/comment/getcomments?startIndex=${startIndex}`);
-         console.log(res)
+        
 
          const data = await res.json()
 

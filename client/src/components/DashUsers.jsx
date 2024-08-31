@@ -45,7 +45,7 @@ export const DashUsers = () => {
      const startIndex = users.length;
       try {
         const res = await fetch(`/api/user/getusers?startIndex=${startIndex}`);
-         console.log(res)
+        
 
          const data = await res.json()
 

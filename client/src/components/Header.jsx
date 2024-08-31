@@ -16,6 +16,7 @@ export default function Header() {
     const {currentUser} = useSelector(state => state.user)
     const {theme} = useSelector(state=>state.theme)
     const [searchTerm, setSearchTerm] = useState("");
+    
     useEffect(() => {
         const urlParams = new URLSearchParams(location.search)
        const searchTermFromUrl = urlParams.get("searchTerm");
@@ -54,6 +55,15 @@ export default function Header() {
 
 
        }
+       const handleSearchButton = (e)=>{
+        navigate(`/search`)
+
+       }
+
+       const handleButtonLink = (e)=>{
+        console.log(e.target.id)
+        navigate(`/${e.target.id}`)
+       }
   return (
     <Navbar className='border-b-2'>
         <Link to="/" className='self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white '>
@@ -68,7 +78,7 @@ export default function Header() {
             onChange={(e)=>{setSearchTerm(e.target.value)}}/>
 
         </form>
-        <Button className='w-12 h-10  lg:hidden' color="gray" pill >
+        <Button type='button' onClick={handleSearchButton} className='w-12 h-10  lg:hidden' color="gray" pill >
             <AiOutlineSearch/>
         </Button>
         <div className='flex gap-2 md:order-2 '>
@@ -110,22 +120,22 @@ export default function Header() {
             <Navbar.Toggle/>
 
         </div>
-            <Navbar.Collapse>
-                <Navbar.Link active={path==="/"} as={"div"}>
-                    <Link to="/" >
+        <Navbar.Collapse>
+                <Navbar.Link active={path==="/"} id='' onClick={handleButtonLink} className='hover:cursor-pointer hover:underline' >
+                  
                         Home
-                    </Link>
+                   
                 </Navbar.Link>
-                <Navbar.Link active={path==="/about"} as={"div"}>
-                    <Link to="/about" >
+                <Navbar.Link active={path==="/about"} id='about' onClick={handleButtonLink}  className='hover:cursor-pointer hover:underline'>
+                    
                         About
-                    </Link>
+                    
                 </Navbar.Link>
                
-                <Navbar.Link active={path==="/projects"} as={"div"}>
-                    <Link to="/projects" >
+                <Navbar.Link active={path==="/projects"} id='projects' onClick={handleButtonLink}  className='hover:cursor-pointer hover:underline'>
+                    
                         Projects
-                    </Link>
+                    
                 </Navbar.Link>
             </Navbar.Collapse>
 

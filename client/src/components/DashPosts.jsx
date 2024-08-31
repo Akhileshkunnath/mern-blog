@@ -45,7 +45,7 @@ export const DashPosts = () => {
      const startIndex = userPosts.length;
       try {
          const res = await fetch(`/api/post/getposts?userId=${currentUser._id}&startIndex=${startIndex}`);
-         console.log(res)
+         
 
          const data = await res.json()
 
@@ -75,7 +75,7 @@ export const DashPosts = () => {
         console.log(data)
       } else {
         setUserPosts((prev)=>{
-          console.log("hello");
+          
           return prev.filter((post)=>post._id !== postIdToDelete);
           
 
