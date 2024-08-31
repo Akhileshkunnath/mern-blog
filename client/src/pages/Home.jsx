@@ -34,7 +34,7 @@ const Home = () => {
         <Link to="/search" className='text-xs sm:text-sm text-teal-500 font-bold hover:underline'>View all post</Link>
         
         </div>
-        <div className=" p-3 bg-amber-100 dark:bg-slate-700">
+        <div className=" p-3 bg-amber-100 dark:bg-slate-700 ">
           <CallToAction/>
         </div>
 
