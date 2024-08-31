@@ -7,7 +7,7 @@ const About = () => {
         <div className="">
           <h1 className='text-3xl font-semibold text-center my-7'>About Akhilesh's Blog</h1>
           <div className=" text-md text-gray-500 flex flex-col gap-6">
-         <p> As a seasoned MERN stack developer and blogger, Akhilesh shares his expertise and passion for building scalable and efficient web applications with a global audience. his blog, "Coding Chronicles," has become a go-to resource for developers seeking insights on the latest trends and best practices in MongoDB, Express.js, React, and Node.js. Through his writing, Akhilesh aims to empower fellow developers to create innovative solutions that transform industries.</p>
+         <p> As a seasoned MERN stack developer, Akhilesh shares his expertise and passion for building scalable and efficient web applications with a global audience. his blog, "Coding Chronicles," has become a go-to resource for developers seeking insights on the latest trends and best practices in MongoDB, Express.js, React, and Node.js. Through his writing, Akhilesh aims to empower fellow developers to create innovative solutions that transform industries.</p>
 
 <p>Akhilesh's blog posts often delve into the intricacies of MERN stack development, offering practical tips, tutorials, and real-world examples. his readers appreciate his ability to break down complex concepts into easy-to-understand language, making his blog an invaluable resource for both novice and experienced developers. By sharing his knowledge and experiences, Akhilesh fosters a sense of community and collaboration within the developer ecosystem.</p>
 
